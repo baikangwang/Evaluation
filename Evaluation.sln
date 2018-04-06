@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{412E70E4-C5FF-4423-BF9A-D95F3B87D598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Dal\Dal.csproj", "{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.csproj", "{011B3298-85F5-4FCD-A9CF-D463347B72F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReVote", "ReVote\ReVote.csproj", "{C1A7D2B8-1712-414C-A974-BF075DA10FD1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://bk-evaluation.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BLL\\BLL.csproj
+		SccProjectName1 = BLL
+		SccLocalPath1 = BLL
+		SccProjectUniqueName2 = Dal\\Dal.csproj
+		SccProjectName2 = Dal
+		SccLocalPath2 = Dal
+		SccProjectUniqueName3 = WebSite\\WebSite.csproj
+		SccProjectName3 = WebSite
+		SccLocalPath3 = WebSite
+		SccProjectUniqueName4 = ReVote\\ReVote.csproj
+		SccProjectName4 = ReVote
+		SccLocalPath4 = ReVote
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Debug|x64.ActiveCfg = Debug|x64
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Debug|x64.Build.0 = Debug|x64
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Release|x64.ActiveCfg = Release|x64
+		{412E70E4-C5FF-4423-BF9A-D95F3B87D598}.Release|x64.Build.0 = Release|x64
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Debug|x64.ActiveCfg = Debug|x64
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Debug|x64.Build.0 = Debug|x64
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Release|x64.ActiveCfg = Release|x64
+		{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}.Release|x64.Build.0 = Release|x64
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Debug|x64.ActiveCfg = Debug|x64
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Debug|x64.Build.0 = Debug|x64
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Release|x64.ActiveCfg = Release|x64
+		{011B3298-85F5-4FCD-A9CF-D463347B72F0}.Release|x64.Build.0 = Release|x64
+		{C1A7D2B8-1712-414C-A974-BF075DA10FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A7D2B8-1712-414C-A974-BF075DA10FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A7D2B8-1712-414C-A974-BF075DA10FD1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C1A7D2B8-1712-414C-A974-BF075DA10FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A7D2B8-1712-414C-A974-BF075DA10FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A7D2B8-1712-414C-A974-BF075DA10FD1}.Release|x64.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,205 @@
+﻿*{
+   font-family:"微软雅黑";list-style:none;font-size:14px;
+}
+
+
+h3{
+    font-family:"微软雅黑"
+}
+ a.btnt:focus {
+  color:#fff;
+  text-decoration: none;
+}
+ a:hover{
+  color:#fff;
+  text-decoration: none;
+  background-color:#62C1C9;
+ }
+
+
+/* 下拉列表*/
+
+.ms-choice {
+   height:26px!important;border-radius:0!important;line-height:26px!important;
+}
+
+.ms-parent input{
+    height:11px!important;
+}
+.ms-parent  .ms-choice > span {
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 28px;
+}
+
+.ms-parent  .ms-choice > div {
+    position: absolute;
+    right: 3px;
+}
+
+.ms-drop.bottom input[type="checkbox"] {
+    margin: -2px 5px 0 0;
+}
+/*表格*/
+.bs-checkbox{
+    width:45px !important;
+} 
+label,button, select, textarea {
+    font-size: 14px !important;
+    font-weight: normal;
+}
+
+input{
+    font-size:13px !important;
+}
+
+#div table tr th, #div table {
+    text-align: center;
+}
+   .table {
+    width: auto;
+    background-color: #f9f9f9;
+}
+
+    .table tr:nth-child(1) {
+        background: #85E1E1;
+    }
+    .table thead tr{
+        background: #85E1E1;
+    }
+   .bootstrap-table .table > thead > tr > th {
+  
+   border-bottom: 0;
+  }
+   
+    .table tbody > tr > th {
+        vertical-align: middle;
+        text-align:center;
+    }
+    th{
+        text-align:center;
+    }
+    .table-bordered>tbody>tr>th{
+           border:0;
+         }
+   .table tbody > tr > td {
+            border: 0;vertical-align: middle;
+            text-align: inherit;
+           
+        }
+   .table tbody > tr:last-child {
+      border-bottom:1px solid #ccc;
+
+    }
+
+    .table tbody > tr > td label {
+        padding-top: 6px;
+    }
+    .table a:hover{
+        color:inherit;
+        background:transparent;
+    }
+.btnt {
+    width:78px;
+    border-radius: 4px!important;
+    background: #33B0BA !important;
+    color: #fff!important;
+    border: none!important;
+    height:25px;
+    font-size: 13px!important;
+   
+}
+   a.btnt{
+       padding:4px 19px;
+        }
+
+   /*.tabbable  a.btnt{
+       padding:4px 19px;
+   }*/
+   .tabbable  a.btnt.up{
+       padding:4px 16px;
+   }
+#lkbSetSchedule{
+   width: 100px;
+    border-radius: 4px;
+    background: #33B0BA;
+    color: #fff;
+    border: none;
+    padding: 6px 13px;
+    font-size: 13px;
+}
+
+ .btnt:hover, .ui-state-default:hover, .ui-widget-content .ui-state-default:hover, .ui-widget-header .ui-state-default:hover, .ColVis_MasterButton:hover, .fc-state-default:hover, .btn:focus, .ui-state-default:focus, .ui-widget-content .ui-state-default:focus, .ui-widget-header .ui-state-default:focus, .ColVis_MasterButton:focus, .fc-state-default:focus {
+        color: #fff;
+        background-color: #62C1C9;
+        border-color: rgba(0,0,0,0.13);
+    }
+
+.fa-save:before, .fa-floppy-o:before {
+    content: "";
+}
+ /*查询按钮*/
+#lbkSearch{
+  padding:7px 30px;
+}
+
+.editable-input{
+    position:relative;
+    top:3px;
+    right:5px;
+}
+
+.ms-parent {
+    width: 166px !important;
+  
+   
+}
+ .table.table-hover.table-striped> tbody  > tr.selected >td {
+           background-color:#DBF1EF;
+            }
+
+    
+/*删除的弹出框*/
+
+.layui-layer-btn .layui-layer-btn0,.layui-layer-btn1 {
+    border-color: #34B0Ba!important;
+    background-color: #34B0Ba!important; 
+    width:78px!important;
+    height:26px!important;  
+    color:#fff!important;  
+}
+.layui-layer.layui-layer-page.layer-anim{
+    min-width:280px!important;
+    min-height:156px!important;
+}
+.layui-layer-btn a{
+    line-height:24px!important;
+}
+.layui-layer-setwin a:hover{
+    background-color:transparent!important;
+}
+.layui-layer-title{
+    background:#85E1E1!important;
+}
+.layui-layer-iframe .layui-layer-btn, .layui-layer-page .layui-layer-btn{
+    padding-top:25px!important;
+}
+#divPagination .pagination>li>a:hover{
+   color: #4d7496!important;
+}
+ul.ui-choose{
+    margin-left: 0!important;
+}
+ul.ui-choose>li {
+    height: 26px!important;
+    line-height: 24px!important;
+    padding: 0 12px!important;
+}
+   tbody .fa-edit, .fa-pencil-square-o{
+            content: "\f044";
+            position: relative;
+            top: 1px; 
+            font-size:18px;          
+        }

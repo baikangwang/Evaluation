@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D1EB0F6-B05E-4E9A-A3C1-DEC6F749A188}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dal</RootNamespace>
+    <AssemblyName>Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\AwardResult.cs" />
+    <Compile Include="Models\RevoteApplication.cs" />
+    <Compile Include="Models\ReVoteDeclaration.cs" />
+    <Compile Include="Models\ReVoteBatch.cs" />
+    <Compile Include="Models\Control.cs" />
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\Appendix.cs" />
+    <Compile Include="Models\Atlas.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Declaration_Data.cs" />
+    <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\RevoteGroup.cs" />
+    <Compile Include="Models\RevotePrize.cs" />
+    <Compile Include="Models\RevotePrizeLevel.cs" />
+    <Compile Include="Models\RevoteResult.cs" />
+    <Compile Include="Models\RevoteResultView.cs" />
+    <Compile Include="Models\RevotingVote.cs" />
+    <Compile Include="Models\RevotingVoteView.cs" />
+    <Compile Include="Models\TemplateConstant.cs" />
+    <Compile Include="Models\TemplateRecord.cs" />
+    <Compile Include="Models\Template_18_WaterSystem.cs" />
+    <Compile Include="Models\UploadFileInfo.cs" />
+    <Compile Include="Models\PageInfo.cs" />
+    <Compile Include="Models\Participant.cs" />
+    <Compile Include="Models\PrizeLevel.cs" />
+    <Compile Include="Models\Template_08_Equipment.cs" />
+    <Compile Include="Models\Template_07_Electrical.cs" />
+    <Compile Include="Models\Template_06_Architecture.cs" />
+    <Compile Include="Models\Authority.cs" />
+    <Compile Include="Models\Template_05_BIM.cs" />
+    <Compile Include="Models\Declaration.cs" />
+    <Compile Include="Models\Expert.cs" />
+    <Compile Include="Models\ExpertGroup.cs" />
+    <Compile Include="Models\GroupMember.cs" />
+    <Compile Include="Models\MailInfo.cs" />
+    <Compile Include="Models\Notice.cs" />
+    <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\Prize.cs" />
+    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\Specialty.cs" />
+    <Compile Include="Models\SysConstant.cs" />
+    <Compile Include="Models\SysMenu.cs" />
+    <Compile Include="Models\Template_01_PublicBuilding.cs" />
+    <Compile Include="Models\Template_02_ResidentialBuilding.cs" />
+    <Compile Include="Models\Template_03_TraditionalBuilding.cs" />
+    <Compile Include="Models\Template_04_GreenBuilding.cs" />
+    <Compile Include="Models\Template_09_IntelligentBuilding.cs" />
+    <Compile Include="Models\Template_10_CivilAirDefence.cs" />
+    <Compile Include="Models\Template_11_AntiSeismic.cs" />
+    <Compile Include="Models\Template_12_Municipal.cs" />
+    <Compile Include="Models\Template_13_Landscape.cs" />
+    <Compile Include="Models\Template_14_Survey.cs" />
+    <Compile Include="Models\Template_15_Industry.cs" />
+    <Compile Include="Models\Template_16_Software.cs" />
+    <Compile Include="Models\Template_17_Standard.cs" />
+    <Compile Include="Models\TemplateBase.cs" />
+    <Compile Include="Models\UserGroup.cs" />
+    <Compile Include="Models\UserSpecialty.cs" />
+    <Compile Include="Models\UserOrg.cs" />
+    <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\VoteResult.cs" />
+    <Compile Include="Models\Vote.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\V_Prize.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

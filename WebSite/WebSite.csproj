@@ -1,0 +1,2251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{011B3298-85F5-4FCD-A9CF-D463347B72F0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evaluation</RootNamespace>
+    <AssemblyName>Evaluation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.6119.30309, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Appraise\BLL\bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Appraise\BLL\bin\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Appraise\BLL\bin\Debug\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Appraise\BLL\bin\Debug\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Appraise\BLL\bin\Debug\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\buttons.css" />
+    <Content Include="Content\assets\css\error.css" />
+    <Content Include="Content\assets\css\fontawesome\font-awesome-ie7.min.css" />
+    <Content Include="Content\assets\css\fontawesome\font-awesome.min.css" />
+    <Content Include="Content\assets\css\font\fontawesome-webfont.svg" />
+    <Content Include="Content\assets\css\icons.css" />
+    <Content Include="Content\assets\css\ie8.css" />
+    <Content Include="Content\assets\css\login.css" />
+    <Content Include="Content\assets\css\main.css" />
+    <Content Include="Content\assets\css\plugins.css" />
+    <Content Include="Content\assets\css\plugins\bootstrap-colorpicker.css" />
+    <Content Include="Content\assets\css\plugins\bootstrap-multiselect.css" />
+    <Content Include="Content\assets\css\plugins\bootstrap-switch.css" />
+    <Content Include="Content\assets\css\plugins\bootstrap-wizard.css" />
+    <Content Include="Content\assets\css\plugins\bootstrap-wysihtml5.css" />
+    <Content Include="Content\assets\css\plugins\datatables.css" />
+    <Content Include="Content\assets\css\plugins\datatables_bootstrap.css" />
+    <Content Include="Content\assets\css\plugins\daterangepicker.css" />
+    <Content Include="Content\assets\css\plugins\duallistbox.css" />
+    <Content Include="Content\assets\css\plugins\fullcalendar.css" />
+    <Content Include="Content\assets\css\plugins\jquery-ui.css" />
+    <Content Include="Content\assets\css\plugins\nestable.css" />
+    <Content Include="Content\assets\css\plugins\nprogress.css" />
+    <Content Include="Content\assets\css\plugins\pickadate.css" />
+    <Content Include="Content\assets\css\plugins\select2.css" />
+    <Content Include="Content\assets\css\plugins\tagsinput.css" />
+    <Content Include="Content\assets\css\plugins\typeahead.css" />
+    <Content Include="Content\assets\css\plugins\uniform.css" />
+    <Content Include="Content\assets\css\responsive.css" />
+    <Content Include="Content\assets\img\demo\avatar-1.jpg" />
+    <Content Include="Content\assets\img\demo\avatar-2.jpg" />
+    <Content Include="Content\assets\img\demo\avatar-3.jpg" />
+    <Content Include="Content\assets\img\demo\avatar-large.jpg" />
+    <Content Include="Content\assets\img\icons\iconsweets\icos-dark.png" />
+    <Content Include="Content\assets\img\icons\iconsweets\icos-white.png" />
+    <Content Include="Content\assets\img\icons\led\sprite.png" />
+    <Content Include="Content\assets\img\logo.png" />
+    <Content Include="Content\assets\img\sidebar\sidebar-divider-dots.png" />
+    <Content Include="Content\assets\js\app.js" />
+    <Content Include="Content\assets\js\assets\img\ajax-loading.gif" />
+    <Content Include="Content\assets\js\custom.js" />
+    <Content Include="Content\assets\js\demo\charts.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_bars_horizontal.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_bars_vertical.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_donut.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_filled_blue.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_filled_green.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_filled_red.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_multiple.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_pie.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_selection_zooming.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_simple.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_updating.js" />
+    <Content Include="Content\assets\js\demo\charts\chart_widget.js" />
+    <Content Include="Content\assets\js\demo\form_components.js" />
+    <Content Include="Content\assets\js\demo\form_validation.js" />
+    <Content Include="Content\assets\js\demo\form_wizard.js" />
+    <Content Include="Content\assets\js\demo\google_maps.js" />
+    <Content Include="Content\assets\js\demo\pages_calendar.js" />
+    <Content Include="Content\assets\js\demo\ui_buttons.js" />
+    <Content Include="Content\assets\js\demo\ui_general.js" />
+    <Content Include="Content\assets\js\demo\ui_nestable_list.js" />
+    <Content Include="Content\assets\js\demo\ui_sliders.js" />
+    <Content Include="Content\assets\js\libs\breakpoints.js" />
+    <Content Include="Content\assets\js\libs\html5shiv.js" />
+    <Content Include="Content\assets\js\libs\jquery-1.10.2.min.js" />
+    <Content Include="Content\assets\js\libs\lodash.compat.min.js" />
+    <Content Include="Content\assets\js\login.js" />
+    <Content Include="Content\assets\js\plugins.form-components.js" />
+    <Content Include="Content\assets\js\plugins.js" />
+    <Content Include="Content\assets\js\plugins\datatables\tabletools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.js" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Css\Declaration.css" />
+    <Content Include="Content\Css\pages.css" />
+    <Content Include="Content\Images\banner1.png" />
+    <Content Include="Content\Images\banner2.png" />
+    <Content Include="Content\Images\bottom.png" />
+    <Content Include="Content\Images\bread.jpg" />
+    <Content Include="Content\Images\btn.png" />
+    <Content Include="Content\Images\close.png" />
+    <Content Include="Content\Images\dl.png" />
+    <Content Include="Content\Images\login_0101.jpg" />
+    <Content Include="Content\Images\logo-bottom.png" />
+    <Content Include="Content\Images\logo_0102.png" />
+    <Content Include="Content\Images\logo_0101.jpg" />
+    <Content Include="Content\Images\menu.png" />
+    <Content Include="Content\Images\tab1.png" />
+    <Content Include="Content\Images\tab1a.png" />
+    <Content Include="Content\Images\tab2.png" />
+    <Content Include="Content\Images\tab2a.png" />
+    <Content Include="Content\Images\下载.png" />
+    <Content Include="Content\Images\水印图_市优.jpg" />
+    <Content Include="Content\Images\水印图_行优.jpg" />
+    <Content Include="Content\Javascript\Declaration.js" />
+    <Content Include="Content\Javascript\DeclarationReview.js" />
+    <Content Include="Content\Javascript\FunctionJS.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\css\fileinput.css" />
+    <Content Include="Content\plugins\bootstrap-fileinput\css\fileinput.min.css" />
+    <Content Include="Content\plugins\bootstrap-fileinput\img\loading-sm.gif" />
+    <Content Include="Content\plugins\bootstrap-fileinput\img\loading.gif" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\fileinput.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\fileinput.min.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\ar.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\bg.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\ca.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\cr.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\cz.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\da.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\de.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\el.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\es.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\fa.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\fi.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\fr.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\hu.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\id.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\it.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\ja.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\LANG.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\nl.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\pl.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\pt-BR.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\pt.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\ro.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\ru.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\sk.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\sl.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\th.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\tr.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\uk.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\vi.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\zh-TW.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\locales\zh.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\plugins\canvas-to-blob.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\plugins\canvas-to-blob.min.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\plugins\purify.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\plugins\purify.min.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\plugins\sortable.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\js\plugins\sortable.min.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\themes\fa\theme.js" />
+    <Content Include="Content\plugins\bootstrap-fileinput\themes\gly\theme.js" />
+    <Content Include="Content\plugins\bootstrap-table\bootstrap-editable.css" />
+    <Content Include="Content\plugins\bootstrap-table\bootstrap-editable.js" />
+    <Content Include="Content\plugins\bootstrap-table\bootstrap-table-editable.js" />
+    <Content Include="Content\plugins\bootstrap-table\bootstrap-table.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Images\find_pwd.png" />
+    <Content Include="Content\Images\head.jpg" />
+    <Content Include="Content\Images\icon.jpg" />
+    <Content Include="Content\Images\load.gif" />
+    <Content Include="Content\Images\login_0102.jpg" />
+    <Content Include="Content\Images\折叠条.jpg" />
+    <Content Include="Content\Javascript\HomePage.js" />
+    <Content Include="Content\jquery-1.10.2.min.js" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\plugins\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\css\bootstrap-iconpicker.css" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\css\bootstrap-iconpicker.min.css" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\bootstrap-iconpicker.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\bootstrap-iconpicker.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-all.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-elusiveicon-2.0.0.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-elusiveicon-2.0.0.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-fontawesome-4.0.0.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-fontawesome-4.0.0.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-fontawesome-4.1.0.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-fontawesome-4.1.0.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-fontawesome-4.2.0.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-fontawesome-4.2.0.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-glyphicon.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-glyphicon.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-ionicon-1.5.2.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-ionicon-1.5.2.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-mapicon-2.1.0.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-mapicon-2.1.0.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-materialdesign-1.1.1.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-materialdesign-1.1.1.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-octicon-2.1.2.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-octicon-2.1.2.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-typicon-2.0.6.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-typicon-2.0.6.min.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-weathericon-1.2.0.js" />
+    <Content Include="Content\plugins\bootstrap-iconpicker\js\iconset\iconset-weathericon-1.2.0.min.js" />
+    <Content Include="Content\plugins\bootstrap-multiselect\bootstrap-multiselect.min.js" />
+    <Content Include="Content\plugins\bootstrap-multiselect\multiple-select.css" />
+    <Content Include="Content\plugins\bootstrap-multiselect\multiple-select.js" />
+    <Content Include="Content\plugins\bootstrap-multiselect\multiple-select.png" />
+    <Content Include="Content\plugins\bootstrap-switch\bootstrap-switch.min.js" />
+    <Content Include="Content\plugins\bootstrap-switch\dist\css\bootstrap2\bootstrap-switch.css" />
+    <Content Include="Content\plugins\bootstrap-switch\dist\css\bootstrap2\bootstrap-switch.min.css" />
+    <Content Include="Content\plugins\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.css" />
+    <Content Include="Content\plugins\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.min.css" />
+    <Content Include="Content\plugins\bootstrap-switch\dist\js\bootstrap-switch.js" />
+    <Content Include="Content\plugins\bootstrap-switch\dist\js\bootstrap-switch.min.js" />
+    <Content Include="Content\plugins\cookie\jquery.cookie.min.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\bar.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\chord.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\eventRiver.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\force.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\funnel.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\gauge.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\heatmap.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\k.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\line.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\map.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\pie.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\radar.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\scatter.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\tree.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\treemap.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\venn.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\chart\wordCloud.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\echarts-all.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\echarts.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\echarts-optimize-conf.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\bar.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\chord.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\eventRiver.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\force.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\funnel.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\gauge.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\heatmap.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\k.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\line.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\map.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\pie.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\radar.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\scatter.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\tree.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\treemap.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\venn.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\chart\wordCloud.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\echarts-all.js" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\echarts.js" />
+    <Content Include="Content\plugins\layer\layer.js" />
+    <Content Include="Content\plugins\layer\mobile\layer.js" />
+    <Content Include="Content\plugins\layer\mobile\need\layer.css" />
+    <Content Include="Content\plugins\layer\skin\default\icon-ext.png" />
+    <Content Include="Content\plugins\layer\skin\default\icon.png" />
+    <Content Include="Content\plugins\layer\skin\default\layer.css" />
+    <Content Include="Content\plugins\layer\skin\default\loading-0.gif" />
+    <Content Include="Content\plugins\layer\skin\default\loading-1.gif" />
+    <Content Include="Content\plugins\layer\skin\default\loading-2.gif" />
+    <Content Include="Content\plugins\respond\respond.min.js" />
+    <Content Include="Content\plugins\slimscroll\jquery.slimscroll.horizontal.min.js" />
+    <Content Include="Content\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\plugins\tabdrop\css\tabdrop.css" />
+    <Content Include="Content\plugins\tabdrop\js\bootstrap-tabdrop.js" />
+    <Content Include="Content\plugins\ueditor\.DS_Store" />
+    <Content Include="Content\plugins\ueditor\dialogs\anchor\anchor.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\attachment.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\attachment.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\attachment.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\bg.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\icons.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\image.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\progress.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\success.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\attachment\images\success.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\background\background.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\background\background.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\background\background.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\background\images\bg.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\background\images\success.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\chart.config.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\charts.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\charts.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\charts.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\images\charts0.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\images\charts1.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\images\charts2.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\images\charts3.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\images\charts4.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\charts\images\charts5.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\emotion.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\emotion.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\emotion.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\0.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\gmap\gmap.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\help\help.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\help\help.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\help\help.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\image.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\image.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\image.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\bg.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\icons.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\icons.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\image.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\progress.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\success.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\image\images\success.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\internal.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\link\link.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\map\map.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\map\show.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\music\music.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\music\music.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\music\music.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\preview\preview.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\size.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\spechars\spechars.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\spechars\spechars.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\table\dragicon.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\table\edittable.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\table\edittable.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\table\edittable.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\table\edittd.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\table\edittip.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\config.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\images\bg.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\images\pre0.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\images\pre1.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\images\pre2.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\images\pre3.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\images\pre4.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\template.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\template.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\template\template.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\bg.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\file-icons.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\icons.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\icons.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\image.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\progress.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\success.gif" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\images\success.png" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\video.css" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\video.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\video\video.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\webapp\webapp.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="Content\plugins\ueditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="Content\plugins\ueditor\dialogs\wordimage\tangram.js" />
+    <Content Include="Content\plugins\ueditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="Content\plugins\ueditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="Content\plugins\ueditor\lang\en\en.js" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\addimage.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\background.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\button.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\copy.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\deletedisable.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\deleteenable.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\listbackground.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\localimage.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\music.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="Content\plugins\ueditor\lang\en\images\upload.png" />
+    <Content Include="Content\plugins\ueditor\lang\zh-cn\images\copy.png" />
+    <Content Include="Content\plugins\ueditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="Content\plugins\ueditor\lang\zh-cn\images\music.png" />
+    <Content Include="Content\plugins\ueditor\lang\zh-cn\images\upload.png" />
+    <Content Include="Content\plugins\ueditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="Content\plugins\ueditor\themes\default\css\ueditor.css" />
+    <Content Include="Content\plugins\ueditor\themes\default\css\ueditor.min.css" />
+    <Content Include="Content\plugins\ueditor\themes\default\dialogbase.css" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\anchor.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\arrow.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\arrow_down.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\arrow_up.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\button-bg.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\charts.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\cursor_h.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\cursor_h.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\cursor_v.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\cursor_v.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\filescan.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\highlighted.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\icons-all.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\icons.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\icons.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\loaderror.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\loading.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\lock.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\pagebreak.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\scale.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\sortable.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\spacer.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\sparator_v.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\table-cell-align.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\upload.png" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\videologo.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\word.gif" />
+    <Content Include="Content\plugins\ueditor\themes\default\images\wordpaste.png" />
+    <Content Include="Content\plugins\ueditor\themes\iframe.css" />
+    <Content Include="Content\plugins\ueditor\third-party\codemirror\codemirror.css" />
+    <Content Include="Content\plugins\ueditor\third-party\codemirror\codemirror.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\highcharts.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\data.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\map.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="Content\plugins\ueditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="Content\plugins\ueditor\third-party\jquery-1.10.2.js" />
+    <Content Include="Content\plugins\ueditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="Content\plugins\ueditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="Content\plugins\ueditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="Content\plugins\ueditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\video-js.css" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\video-js.min.css" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\video-js.swf" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\video.dev.js" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\video.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.css" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Content\plugins\ueditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="Content\plugins\ueditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="Content\plugins\ueditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="Content\plugins\ueditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="Content\plugins\ueditor\ueditor.all.js" />
+    <Content Include="Content\plugins\ueditor\ueditor.all.min.js" />
+    <Content Include="Content\plugins\ueditor\ueditor.config.js" />
+    <Content Include="Content\plugins\ueditor\ueditor.parse.js" />
+    <Content Include="Content\plugins\ueditor\ueditor.parse.min.js" />
+    <Content Include="Content\plugins\ueditor\ueditorHelps.js" />
+    <Content Include="Content\plugins\ui-choose\css\default.css" />
+    <Content Include="Content\plugins\ui-choose\css\normalize.css" />
+    <Content Include="Content\plugins\ui-choose\fonts\icomoon.svg" />
+    <Content Include="Content\plugins\ui-choose\src\icon-selected.png" />
+    <Content Include="Content\plugins\ui-choose\src\ui-choose.css" />
+    <Content Include="Content\plugins\ui-choose\src\ui-choose.js" />
+    <Content Include="Content\plugins\Verification\jquery.idcode.css" />
+    <Content Include="Content\plugins\Verification\jquery.idcode.js" />
+    <Content Include="Content\plugins\video5.18.4.js\css\video-js.css" />
+    <Content Include="Content\plugins\video5.18.4.js\js\video.min.js" />
+    <Content Include="Content\plugins\video5.18.4.js\js\videojs-ie8.min.js" />
+    <Content Include="Content\plugins\zoom\css\viewer.min.css" />
+    <Content Include="Content\plugins\zoom\js\viewer-jquery.min.js" />
+    <Content Include="Content\Template\富文本转Word.html" />
+    <Content Include="default.htm" />
+    <Content Include="Content\plugins\bootstrap-table\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Content\plugins\bootstrap-table\bootstrap-table.js" />
+    <Content Include="MiddlePage.aspx" />
+    <Content Include="Content\Template\0204绿建_V2.docx" />
+    <Content Include="Content\Template\0212市政_V2.docx" />
+    <Content Include="Content\Template\0216软件_V2.docx" />
+    <Content Include="Content\Template\0217标准_V2.docx" />
+    <Content Include="Content\Template\0210人防_V2.docx" />
+    <Content Include="Content\Template\0206结构_V2.docx" />
+    <Content Include="Content\Template\0213园林_V2.docx" />
+    <Content Include="Content\Template\0208设备_V2.docx" />
+    <Content Include="Content\Template\0209智能_V2.docx" />
+    <Content Include="Content\Template\0207电气_V2.docx" />
+    <Content Include="Content\Template\0211抗震_V2.docx" />
+    <Content Include="Content\Template\0218水系统_V2.docx" />
+    <Content Include="Content\plugins\ueditor\net\config.json" />
+    <Content Include="Content\plugins\ueditor\net\controller.ashx" />
+    <Content Include="Content\Template\0201公建_V2.docx" />
+    <Content Include="Content\Template\0202居住_V2.docx" />
+    <Content Include="Content\Template\0203传统_V2.docx" />
+    <Content Include="Content\Template\0205BIM_V2.docx" />
+    <Content Include="Content\Template\0214勘察_V2.docx" />
+    <Content Include="Content\Template\0215工业_V2.docx" />
+    <Content Include="Content\Template\奖项投票结果.xls" />
+    <Content Include="Content\Template\北京市优秀工程勘察设计奖评审表.docx" />
+    <Content Include="Content\Template\推荐意见表.docx" />
+    <Content Include="Content\Template\评选项目推荐表.docx" />
+    <None Include="Service References\BKXPYServiceReference\BKXPY_UserTBWS.disco" />
+    <None Include="Service References\BKXPYServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\BKXPYServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\BKXPYServiceReference\Evaluation.BKXPYServiceReference.GetUser_WSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\BKXPYServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="View\ActivityManage\ExpertVoteResult.aspx" />
+    <Content Include="View\ActivityManage\NoticeList.aspx" />
+    <Content Include="View\ActivityManage\RevoteResult.aspx" />
+    <Content Include="View\ActivityManage\ReVoteSet.aspx" />
+    <Content Include="View\ActivityManage\Schedule.ascx" />
+    <Content Include="View\ActivityManage\MultipleRevoteSet.aspx" />
+    <Content Include="View\ActivityManage\SpecialtyList.aspx" />
+    <Content Include="View\ActivityManage\CreateActivity.aspx" />
+    <Content Include="View\ActivityManage\DeclarationAuditing.aspx" />
+    <Content Include="View\ActivityManage\DeclarationPrizeAdjust.aspx" />
+    <Content Include="View\ActivityManage\Notice.aspx" />
+    <Content Include="View\ActivityManage\PrizeList.aspx" />
+    <Content Include="View\ActivityManage\PrizeSet.aspx" />
+    <Content Include="View\ActivityManage\ReviewResult.aspx" />
+    <Content Include="View\ActivityManage\SingleRevoteSet.aspx" />
+    <Content Include="View\ActivityManage\SpecialtySet.aspx" />
+    <Content Include="View\ActivityManage\VoteDetails.aspx" />
+    <Content Include="View\ActivityManage\VotePrizeList.aspx" />
+    <Content Include="View\ActivityManage\AwardResult.aspx" />
+    <Content Include="View\ActivityManage\VoteResult.aspx" />
+    <Content Include="View\Declaration\AdminDeclarationList.aspx" />
+    <Content Include="View\Declaration\AntiSeismicReview_V2.aspx" />
+    <Content Include="View\Declaration\AntiSeismic_V2.aspx" />
+    <Content Include="View\Declaration\AppendixReview.ascx" />
+    <Content Include="View\Declaration\ArchitectureReview_V2.aspx" />
+    <Content Include="View\Declaration\Architecture_V2.aspx" />
+    <Content Include="View\Declaration\BranchDeclarationList.aspx" />
+    <Content Include="View\Declaration\CertificateReview.ascx" />
+    <Content Include="View\Declaration\CivilAirDefenceReview_V2.aspx" />
+    <Content Include="View\Declaration\CivilAirDefence_V2.aspx" />
+    <Content Include="View\Declaration\ElectricalReview_V2.aspx" />
+    <Content Include="View\Declaration\Electrical_V2.aspx" />
+    <Content Include="View\Declaration\EquipmentReview_V2.aspx" />
+    <Content Include="View\Declaration\Equipment_V2.aspx" />
+    <Content Include="View\Declaration\GreenBuildingReview_V2.aspx" />
+    <Content Include="View\Declaration\GreenBuilding_V2.aspx" />
+    <Content Include="View\Declaration\IntelligentBuildingReview_V2.aspx" />
+    <Content Include="View\Declaration\IntelligentBuilding_V2.aspx" />
+    <Content Include="View\Declaration\LandscapeReview.aspx" />
+    <Content Include="View\Declaration\LandscapeReview_V2.aspx" />
+    <Content Include="View\Declaration\Landscape_V2.aspx" />
+    <Content Include="View\Declaration\LegalStatesReview.ascx" />
+    <Content Include="View\Declaration\LegalStatesReview_V2.ascx" />
+    <Content Include="View\Declaration\LegalStates_V2.ascx" />
+    <Content Include="View\Declaration\MunicipalReview_V2.aspx" />
+    <Content Include="View\Declaration\Municipal_V2.aspx" />
+    <Content Include="View\Declaration\ParticipantReview.ascx" />
+    <Content Include="View\Declaration\Preview.aspx" />
+    <Content Include="View\Declaration\PublicBuildingReview.aspx" />
+    <Content Include="View\Declaration\PublicBuildingReview_V2.aspx" />
+    <Content Include="View\Declaration\PublicBuilding_V2.aspx" />
+    <Content Include="View\Declaration\ResidentialBuildingReview_V2.aspx" />
+    <Content Include="View\Declaration\ResidentialBuilding_V2.aspx" />
+    <Content Include="View\Declaration\SoftwareReview_V2.aspx" />
+    <Content Include="View\Declaration\Software_V2.aspx" />
+    <Content Include="View\Declaration\StandardReview_V2.aspx" />
+    <Content Include="View\Declaration\Standard_V2.aspx" />
+    <Content Include="View\Declaration\SurveyReview_V2.aspx" />
+    <Content Include="View\Declaration\Survey_V2.aspx" />
+    <Content Include="View\Declaration\WaterSystem.aspx" />
+    <Content Include="View\Declaration\WaterSystemReview.aspx" />
+    <Content Include="View\Declaration\WaterSystemReview_V2.aspx" />
+    <Content Include="View\Declaration\WaterSystem_V2.aspx" />
+    <Content Include="View\ExpertElect\ExpertNewRevote.aspx" />
+    <Content Include="View\ExpertElect\ExpertRevoteDetailList.aspx" />
+    <Content Include="View\ExpertElect\NewRevote.aspx" />
+    <Content Include="View\ExpertElect\Ballot.aspx" />
+    <Content Include="View\ExpertElect\ExpertPromise.aspx" />
+    <Content Include="View\ExpertElect\ExpertRevote.aspx" />
+    <Content Include="View\ExpertElect\ExpertVoteDetail.aspx" />
+    <Content Include="View\ExpertElect\ExpertVoteDetailList.aspx" />
+    <Content Include="View\Mutual\Deploy.aspx" />
+    <Content Include="View\Mutual\ExpertElect.ashx" />
+    <Content Include="View\Mutual\HomePage.aspx" />
+    <Content Include="View\Mutual\UserEntry.aspx" />
+    <Content Include="View\Mutual\upgrade-your-browser.aspx" />
+    <Content Include="View\Declaration\AntiSeismic.aspx" />
+    <Content Include="View\Declaration\AntiSeismicReview.aspx" />
+    <Content Include="View\Declaration\Appendix.ascx" />
+    <Content Include="View\Declaration\Architecture.aspx" />
+    <Content Include="View\Declaration\ArchitectureReview.aspx" />
+    <Content Include="View\Declaration\AuditOpinion.ascx" />
+    <Content Include="View\Declaration\BIM.aspx" />
+    <Content Include="View\Declaration\BIMReview.aspx" />
+    <Content Include="View\Declaration\Certificate.ascx" />
+    <Content Include="View\Declaration\CivilAirDefence.aspx" />
+    <Content Include="View\Declaration\CivilAirDefenceReview.aspx" />
+    <Content Include="View\Declaration\Comments.ascx" />
+    <Content Include="View\Declaration\Cooperation.ascx" />
+    <Content Include="View\Declaration\Declaration.aspx" />
+    <Content Include="View\Declaration\DeclarationDeleted.aspx" />
+    <Content Include="View\Declaration\DivisionTable.ascx" />
+    <Content Include="View\Declaration\Electrical.aspx" />
+    <Content Include="View\Declaration\ElectricalReview.aspx" />
+    <Content Include="View\Declaration\Equipment.aspx" />
+    <Content Include="View\Declaration\DeclarationList.aspx" />
+    <Content Include="View\Declaration\Declare.aspx" />
+    <Content Include="View\Declaration\EquipmentReview.aspx" />
+    <Content Include="View\Declaration\GreenBuilding.aspx" />
+    <Content Include="View\Declaration\GreenBuildingReview.aspx" />
+    <Content Include="View\Declaration\Industry.aspx" />
+    <Content Include="View\Declaration\IndustryReview.aspx" />
+    <Content Include="View\Declaration\IntelligentBuilding.aspx" />
+    <Content Include="View\Declaration\IntelligentBuildingReview.aspx" />
+    <Content Include="View\Declaration\Landscape.aspx" />
+    <Content Include="View\Declaration\LegalStates.ascx" />
+    <Content Include="View\Declaration\Municipal.aspx" />
+    <Content Include="View\Declaration\MunicipalReview.aspx" />
+    <Content Include="View\Declaration\OrderSheet.ascx" />
+    <Content Include="View\Declaration\Participant.ascx" />
+    <Content Include="View\Declaration\PublicBuilding.aspx" />
+    <Content Include="View\Declaration\PublicConstruction.aspx" />
+    <Content Include="View\Declaration\ResidentialBuilding.aspx" />
+    <Content Include="View\Declaration\ResidentialBuildingReview.aspx" />
+    <Content Include="View\Declaration\Signarure.ascx" />
+    <Content Include="View\Declaration\Software.aspx" />
+    <Content Include="View\Declaration\SoftwareReview.aspx" />
+    <Content Include="View\Declaration\Standard.aspx" />
+    <Content Include="View\Declaration\StandardReview.aspx" />
+    <Content Include="View\Declaration\Survey.aspx" />
+    <Content Include="View\Declaration\SurveyReview.aspx" />
+    <Content Include="View\Declaration\TraditionalBuilding.aspx" />
+    <Content Include="View\Declaration\TraditionalBuildingReview.aspx" />
+    <Content Include="View\ExpertElect\ExpertReview.aspx" />
+    <Content Include="View\ExpertElect\ExpertVote.aspx" />
+    <Content Include="View\ExpertElect\ReviewList.aspx" />
+    <Content Include="View\ExpertManage\Allocation.aspx" />
+    <Content Include="View\ExpertManage\AllocationList.aspx" />
+    <Content Include="View\ExpertManage\ExpertAdjust.aspx" />
+    <Content Include="View\ExpertManage\ExpertImport.aspx" />
+    <Content Include="View\ExpertManage\GroupList.aspx" />
+    <Content Include="View\ExpertManage\GroupMember.aspx" />
+    <Content Include="View\ExpertManage\GroupSet.aspx" />
+    <Content Include="View\ExpertManage\ExpertList.aspx" />
+    <Content Include="View\HistoryData\HistoryActivity.aspx" />
+    <Content Include="View\HistoryData\HistoryReview.aspx" />
+    <Content Include="View\LeaguerElect\LeaguerVote.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="View\Privilege\ControlList.aspx" />
+    <Content Include="View\Privilege\CreatePrivilege.aspx" />
+    <Content Include="View\Privilege\GroupUser.aspx" />
+    <Content Include="View\Privilege\PrivilegeList.aspx" />
+    <Content Include="View\UserManage\CreateUserM.aspx" />
+    <Content Include="View\UserManage\ExpertUser.aspx" />
+    <Content Include="View\UserManage\LeaguerChildUser.aspx" />
+    <Content Include="View\UserManage\LeaguerChildUserList.aspx" />
+    <Content Include="View\UserManage\LeaguerUser.aspx" />
+    <Content Include="View\UserManage\LeaguerUserImport.aspx" />
+    <Content Include="View\UserManage\LeaguerUserList.aspx" />
+    <Content Include="View\UserManage\LocalUser.aspx" />
+    <Content Include="View\UserManage\ManagerUser.aspx" />
+    <Content Include="View\UserManage\RetrievePasswordSuccess.aspx" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\assets\css\font\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\css\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\css\font\fontawesome-webfont.woff" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.min.css.map" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\.DS_Store" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\dist\.DS_Store" />
+    <Content Include="Content\plugins\echarts-2.2.7\build\source\.DS_Store" />
+    <Content Include="Content\plugins\ui-choose\fonts\icomoon.eot" />
+    <Content Include="Content\plugins\ui-choose\fonts\icomoon.ttf" />
+    <Content Include="Content\plugins\ui-choose\fonts\icomoon.woff" />
+    <Content Include="Content\plugins\tabdrop\less\tabdrop.less" />
+    <Content Include="Content\Template\专家.xls" />
+    <Content Include="Content\Template\0202居住.docx" />
+    <Content Include="Content\Template\0203传统.docx" />
+    <Content Include="Content\Template\0204绿建.docx" />
+    <Content Include="Content\Template\0205BIM.docx" />
+    <Content Include="Content\Template\0206结构.docx" />
+    <Content Include="Content\Template\0207电气.docx" />
+    <Content Include="Content\Template\0208设备.docx" />
+    <Content Include="Content\Template\0209智能.docx" />
+    <Content Include="Content\Template\0210人防.docx" />
+    <Content Include="Content\Template\0211抗震.docx" />
+    <Content Include="Content\Template\0212市政.docx" />
+    <Content Include="Content\Template\0213园林.docx" />
+    <Content Include="Content\Template\0214勘察.docx" />
+    <Content Include="Content\Template\0215工业.docx" />
+    <Content Include="Content\Template\0216软件.docx" />
+    <Content Include="Content\Template\0217标准.docx" />
+    <Content Include="Content\Template\项目评审专家组及专家信息模版.xls" />
+    <Content Include="Content\plugins\ueditor\third-party\.DS_Store" />
+    <Content Include="Content\plugins\ueditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="Content\plugins\ueditor\third-party\video-js\font\vjs.woff" />
+    <Content Include="Content\Template\会员用户.xls" />
+    <Content Include="Content\Template\会员子用户.xls" />
+    <Content Include="Content\Template\用户模版.xls" />
+    <Content Include="Content\Template\0201公建.docx" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Template\0218水系统.docx" />
+    <Content Include="Content\Template\申报项目汇总表.docx" />
+    <None Include="Properties\PublishProfiles\评优系统.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="View\UserManage\CreateUser.aspx" />
+    <Content Include="View\UserManage\RetrievePassword.aspx" />
+    <Content Include="View\UserManage\RetrievePassword_Return.aspx" />
+    <Content Include="View\UserManage\UpdatePassword.aspx" />
+    <Content Include="View\UserManage\UserList.aspx" />
+    <Content Include="Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="View\Mutual\Site.Master" />
+    <Content Include="View\Mutual\ActivityManage.ashx" />
+    <Content Include="View\Mutual\Declaration.ashx" />
+    <Content Include="View\Mutual\ExpertManage.ashx" />
+    <Content Include="View\Mutual\HistoryData.ashx" />
+    <Content Include="View\Mutual\LeaguerElect.ashx" />
+    <Content Include="View\Mutual\UserManage.ashx" />
+    <Content Include="View\Mutual\Common.ashx" />
+    <None Include="Service References\BKXPYServiceReference\BKXPY_UserTBWS.wsdl" />
+    <Content Include="System.Data.DataTable1.datasource" />
+    <Content Include="View\Privilege\PrivilegeManage.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Config.cs" />
+    <Content Include="App_Code\ConfigHandler.cs" />
+    <Content Include="App_Code\CrawlerHandler.cs" />
+    <Content Include="App_Code\Handler.cs" />
+    <Content Include="App_Code\ListFileHandler.cs" />
+    <Content Include="App_Code\NotSupportedHandler.cs" />
+    <Content Include="App_Code\PathFormater.cs" />
+    <Content Include="App_Code\UploadHandler.cs" />
+    <Compile Include="App_Start\BundleConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="MiddlePage.aspx.cs">
+      <DependentUpon>MiddlePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiddlePage.aspx.designer.cs">
+      <DependentUpon>MiddlePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="PrintExcel.cs" />
+    <Compile Include="Service References\BKXPYServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\CreateActivity.aspx.cs">
+      <DependentUpon>CreateActivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\CreateActivity.aspx.designer.cs">
+      <DependentUpon>CreateActivity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\DeclarationAuditing.aspx.cs">
+      <DependentUpon>DeclarationAuditing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\DeclarationAuditing.aspx.designer.cs">
+      <DependentUpon>DeclarationAuditing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\DeclarationPrizeAdjust.aspx.cs">
+      <DependentUpon>DeclarationPrizeAdjust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\DeclarationPrizeAdjust.aspx.designer.cs">
+      <DependentUpon>DeclarationPrizeAdjust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\ExpertVoteResult.aspx.cs">
+      <DependentUpon>ExpertVoteResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\ExpertVoteResult.aspx.designer.cs">
+      <DependentUpon>ExpertVoteResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\Notice.aspx.cs">
+      <DependentUpon>Notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\Notice.aspx.designer.cs">
+      <DependentUpon>Notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\NoticeList.aspx.cs">
+      <DependentUpon>NoticeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\NoticeList.aspx.designer.cs">
+      <DependentUpon>NoticeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\PrizeList.aspx.cs">
+      <DependentUpon>PrizeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\PrizeList.aspx.designer.cs">
+      <DependentUpon>PrizeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\PrizeSet.aspx.cs">
+      <DependentUpon>PrizeSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\PrizeSet.aspx.designer.cs">
+      <DependentUpon>PrizeSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\ReviewResult.aspx.cs">
+      <DependentUpon>ReviewResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\ReviewResult.aspx.designer.cs">
+      <DependentUpon>ReviewResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\MultipleRevoteSet.aspx.cs">
+      <DependentUpon>MultipleRevoteSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\MultipleRevoteSet.aspx.designer.cs">
+      <DependentUpon>MultipleRevoteSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\RevoteResult.aspx.cs">
+      <DependentUpon>RevoteResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\RevoteResult.aspx.designer.cs">
+      <DependentUpon>RevoteResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\ReVoteSet.aspx.cs">
+      <DependentUpon>ReVoteSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\ReVoteSet.aspx.designer.cs">
+      <DependentUpon>ReVoteSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\SingleRevoteSet.aspx.cs">
+      <DependentUpon>SingleRevoteSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\SingleRevoteSet.aspx.designer.cs">
+      <DependentUpon>SingleRevoteSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\Schedule.ascx.cs">
+      <DependentUpon>Schedule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\Schedule.ascx.designer.cs">
+      <DependentUpon>Schedule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\SpecialtyList.aspx.cs">
+      <DependentUpon>SpecialtyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\SpecialtyList.aspx.designer.cs">
+      <DependentUpon>SpecialtyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\SpecialtySet.aspx.cs">
+      <DependentUpon>SpecialtySet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\SpecialtySet.aspx.designer.cs">
+      <DependentUpon>SpecialtySet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\VoteDetails.aspx.cs">
+      <DependentUpon>VoteDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\VoteDetails.aspx.designer.cs">
+      <DependentUpon>VoteDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\VotePrizeList.aspx.cs">
+      <DependentUpon>VotePrizeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\VotePrizeList.aspx.designer.cs">
+      <DependentUpon>VotePrizeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\AwardResult.aspx.cs">
+      <DependentUpon>AwardResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\AwardResult.aspx.designer.cs">
+      <DependentUpon>AwardResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActivityManage\VoteResult.aspx.cs">
+      <DependentUpon>VoteResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ActivityManage\VoteResult.aspx.designer.cs">
+      <DependentUpon>VoteResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\AdminDeclarationList.aspx.cs">
+      <DependentUpon>AdminDeclarationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\AdminDeclarationList.aspx.designer.cs">
+      <DependentUpon>AdminDeclarationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismicReview_V2.aspx.cs">
+      <DependentUpon>AntiSeismicReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismicReview_V2.aspx.designer.cs">
+      <DependentUpon>AntiSeismicReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismic_V2.aspx.cs">
+      <DependentUpon>AntiSeismic_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismic_V2.aspx.designer.cs">
+      <DependentUpon>AntiSeismic_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\AppendixReview.ascx.cs">
+      <DependentUpon>AppendixReview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\AppendixReview.ascx.designer.cs">
+      <DependentUpon>AppendixReview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ArchitectureReview_V2.aspx.cs">
+      <DependentUpon>ArchitectureReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ArchitectureReview_V2.aspx.designer.cs">
+      <DependentUpon>ArchitectureReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Architecture_V2.aspx.cs">
+      <DependentUpon>Architecture_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Architecture_V2.aspx.designer.cs">
+      <DependentUpon>Architecture_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\BranchDeclarationList.aspx.cs">
+      <DependentUpon>BranchDeclarationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\BranchDeclarationList.aspx.designer.cs">
+      <DependentUpon>BranchDeclarationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\CertificateReview.ascx.cs">
+      <DependentUpon>CertificateReview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\CertificateReview.ascx.designer.cs">
+      <DependentUpon>CertificateReview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefenceReview_V2.aspx.cs">
+      <DependentUpon>CivilAirDefenceReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefenceReview_V2.aspx.designer.cs">
+      <DependentUpon>CivilAirDefenceReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefence_V2.aspx.cs">
+      <DependentUpon>CivilAirDefence_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefence_V2.aspx.designer.cs">
+      <DependentUpon>CivilAirDefence_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ElectricalReview_V2.aspx.cs">
+      <DependentUpon>ElectricalReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ElectricalReview_V2.aspx.designer.cs">
+      <DependentUpon>ElectricalReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Electrical_V2.aspx.cs">
+      <DependentUpon>Electrical_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Electrical_V2.aspx.designer.cs">
+      <DependentUpon>Electrical_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\EquipmentReview_V2.aspx.cs">
+      <DependentUpon>EquipmentReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\EquipmentReview_V2.aspx.designer.cs">
+      <DependentUpon>EquipmentReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Equipment_V2.aspx.cs">
+      <DependentUpon>Equipment_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Equipment_V2.aspx.designer.cs">
+      <DependentUpon>Equipment_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuildingReview_V2.aspx.cs">
+      <DependentUpon>GreenBuildingReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuildingReview_V2.aspx.designer.cs">
+      <DependentUpon>GreenBuildingReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuilding_V2.aspx.cs">
+      <DependentUpon>GreenBuilding_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuilding_V2.aspx.designer.cs">
+      <DependentUpon>GreenBuilding_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuildingReview_V2.aspx.cs">
+      <DependentUpon>IntelligentBuildingReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuildingReview_V2.aspx.designer.cs">
+      <DependentUpon>IntelligentBuildingReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuilding_V2.aspx.cs">
+      <DependentUpon>IntelligentBuilding_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuilding_V2.aspx.designer.cs">
+      <DependentUpon>IntelligentBuilding_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\LandscapeReview.aspx.cs">
+      <DependentUpon>LandscapeReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\LandscapeReview.aspx.designer.cs">
+      <DependentUpon>LandscapeReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\LandscapeReview_V2.aspx.cs">
+      <DependentUpon>LandscapeReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\LandscapeReview_V2.aspx.designer.cs">
+      <DependentUpon>LandscapeReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Landscape_V2.aspx.cs">
+      <DependentUpon>Landscape_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Landscape_V2.aspx.designer.cs">
+      <DependentUpon>Landscape_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStatesReview.ascx.cs">
+      <DependentUpon>LegalStatesReview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStatesReview.ascx.designer.cs">
+      <DependentUpon>LegalStatesReview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStatesReview_V2.ascx.cs">
+      <DependentUpon>LegalStatesReview_V2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStatesReview_V2.ascx.designer.cs">
+      <DependentUpon>LegalStatesReview_V2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStates_V2.ascx.cs">
+      <DependentUpon>LegalStates_V2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStates_V2.ascx.designer.cs">
+      <DependentUpon>LegalStates_V2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\MunicipalReview_V2.aspx.cs">
+      <DependentUpon>MunicipalReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\MunicipalReview_V2.aspx.designer.cs">
+      <DependentUpon>MunicipalReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Municipal_V2.aspx.cs">
+      <DependentUpon>Municipal_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Municipal_V2.aspx.designer.cs">
+      <DependentUpon>Municipal_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ParticipantReview.ascx.cs">
+      <DependentUpon>ParticipantReview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ParticipantReview.ascx.designer.cs">
+      <DependentUpon>ParticipantReview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuildingReview.aspx.cs">
+      <DependentUpon>PublicBuildingReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuildingReview.aspx.designer.cs">
+      <DependentUpon>PublicBuildingReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuildingReview_V2.aspx.cs">
+      <DependentUpon>PublicBuildingReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuildingReview_V2.aspx.designer.cs">
+      <DependentUpon>PublicBuildingReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuilding_V2.aspx.cs">
+      <DependentUpon>PublicBuilding_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuilding_V2.aspx.designer.cs">
+      <DependentUpon>PublicBuilding_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuildingReview_V2.aspx.cs">
+      <DependentUpon>ResidentialBuildingReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuildingReview_V2.aspx.designer.cs">
+      <DependentUpon>ResidentialBuildingReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuilding_V2.aspx.cs">
+      <DependentUpon>ResidentialBuilding_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuilding_V2.aspx.designer.cs">
+      <DependentUpon>ResidentialBuilding_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\SoftwareReview_V2.aspx.cs">
+      <DependentUpon>SoftwareReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\SoftwareReview_V2.aspx.designer.cs">
+      <DependentUpon>SoftwareReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Software_V2.aspx.cs">
+      <DependentUpon>Software_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Software_V2.aspx.designer.cs">
+      <DependentUpon>Software_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\StandardReview_V2.aspx.cs">
+      <DependentUpon>StandardReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\StandardReview_V2.aspx.designer.cs">
+      <DependentUpon>StandardReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Standard_V2.aspx.cs">
+      <DependentUpon>Standard_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Standard_V2.aspx.designer.cs">
+      <DependentUpon>Standard_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\SurveyReview_V2.aspx.cs">
+      <DependentUpon>SurveyReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\SurveyReview_V2.aspx.designer.cs">
+      <DependentUpon>SurveyReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Survey_V2.aspx.cs">
+      <DependentUpon>Survey_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Survey_V2.aspx.designer.cs">
+      <DependentUpon>Survey_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystem.aspx.cs">
+      <DependentUpon>WaterSystem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystem.aspx.designer.cs">
+      <DependentUpon>WaterSystem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystemReview.aspx.cs">
+      <DependentUpon>WaterSystemReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystemReview.aspx.designer.cs">
+      <DependentUpon>WaterSystemReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystemReview_V2.aspx.cs">
+      <DependentUpon>WaterSystemReview_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystemReview_V2.aspx.designer.cs">
+      <DependentUpon>WaterSystemReview_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystem_V2.aspx.cs">
+      <DependentUpon>WaterSystem_V2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\WaterSystem_V2.aspx.designer.cs">
+      <DependentUpon>WaterSystem_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertNewRevote.aspx.cs">
+      <DependentUpon>ExpertNewRevote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertNewRevote.aspx.designer.cs">
+      <DependentUpon>ExpertNewRevote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertRevoteDetailList.aspx.cs">
+      <DependentUpon>ExpertRevoteDetailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertRevoteDetailList.aspx.designer.cs">
+      <DependentUpon>ExpertRevoteDetailList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\NewRevote.aspx.cs">
+      <DependentUpon>NewRevote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\NewRevote.aspx.designer.cs">
+      <DependentUpon>NewRevote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\Ballot.aspx.cs">
+      <DependentUpon>Ballot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\Ballot.aspx.designer.cs">
+      <DependentUpon>Ballot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertPromise.aspx.cs">
+      <DependentUpon>ExpertPromise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertPromise.aspx.designer.cs">
+      <DependentUpon>ExpertPromise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertRevote.aspx.cs">
+      <DependentUpon>ExpertRevote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertRevote.aspx.designer.cs">
+      <DependentUpon>ExpertRevote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertVoteDetail.aspx.cs">
+      <DependentUpon>ExpertVoteDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertVoteDetail.aspx.designer.cs">
+      <DependentUpon>ExpertVoteDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertVoteDetailList.aspx.cs">
+      <DependentUpon>ExpertVoteDetailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertVoteDetailList.aspx.designer.cs">
+      <DependentUpon>ExpertVoteDetailList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\ActivityManage.ashx.cs">
+      <DependentUpon>ActivityManage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\Common.ashx.cs">
+      <DependentUpon>Common.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\Declaration.ashx.cs">
+      <DependentUpon>Declaration.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\Deploy.aspx.cs">
+      <DependentUpon>Deploy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Mutual\Deploy.aspx.designer.cs">
+      <DependentUpon>Deploy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\ExpertElect.ashx.cs">
+      <DependentUpon>ExpertElect.ashx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Mutual\ExpertManage.ashx.cs">
+      <DependentUpon>ExpertManage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\HistoryData.ashx.cs">
+      <DependentUpon>HistoryData.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Mutual\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\LeaguerElect.ashx.cs">
+      <DependentUpon>LeaguerElect.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\UserEntry.aspx.cs">
+      <DependentUpon>UserEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Mutual\UserEntry.aspx.designer.cs">
+      <DependentUpon>UserEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Mutual\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\upgrade-your-browser.aspx.cs">
+      <DependentUpon>upgrade-your-browser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Mutual\upgrade-your-browser.aspx.designer.cs">
+      <DependentUpon>upgrade-your-browser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mutual\UserManage.ashx.cs">
+      <DependentUpon>UserManage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismic.aspx.cs">
+      <DependentUpon>AntiSeismic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismic.aspx.designer.cs">
+      <DependentUpon>AntiSeismic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismicReview.aspx.cs">
+      <DependentUpon>AntiSeismicReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\AntiSeismicReview.aspx.designer.cs">
+      <DependentUpon>AntiSeismicReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Appendix.ascx.cs">
+      <DependentUpon>Appendix.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Appendix.ascx.designer.cs">
+      <DependentUpon>Appendix.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Architecture.aspx.cs">
+      <DependentUpon>Architecture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Architecture.aspx.designer.cs">
+      <DependentUpon>Architecture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ArchitectureReview.aspx.cs">
+      <DependentUpon>ArchitectureReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ArchitectureReview.aspx.designer.cs">
+      <DependentUpon>ArchitectureReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\AuditOpinion.ascx.cs">
+      <DependentUpon>AuditOpinion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\AuditOpinion.ascx.designer.cs">
+      <DependentUpon>AuditOpinion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\BIM.aspx.cs">
+      <DependentUpon>BIM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\BIM.aspx.designer.cs">
+      <DependentUpon>BIM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\BIMReview.aspx.cs">
+      <DependentUpon>BIMReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\BIMReview.aspx.designer.cs">
+      <DependentUpon>BIMReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Certificate.ascx.cs">
+      <DependentUpon>Certificate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Certificate.ascx.designer.cs">
+      <DependentUpon>Certificate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefence.aspx.cs">
+      <DependentUpon>CivilAirDefence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefence.aspx.designer.cs">
+      <DependentUpon>CivilAirDefence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefenceReview.aspx.cs">
+      <DependentUpon>CivilAirDefenceReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\CivilAirDefenceReview.aspx.designer.cs">
+      <DependentUpon>CivilAirDefenceReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Comments.ascx.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Comments.ascx.designer.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Cooperation.ascx.cs">
+      <DependentUpon>Cooperation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Cooperation.ascx.designer.cs">
+      <DependentUpon>Cooperation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Declaration.aspx.cs">
+      <DependentUpon>Declaration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Declaration.aspx.designer.cs">
+      <DependentUpon>Declaration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\DeclarationDeleted.aspx.cs">
+      <DependentUpon>DeclarationDeleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\DeclarationDeleted.aspx.designer.cs">
+      <DependentUpon>DeclarationDeleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\DivisionTable.ascx.cs">
+      <DependentUpon>DivisionTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\DivisionTable.ascx.designer.cs">
+      <DependentUpon>DivisionTable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Electrical.aspx.cs">
+      <DependentUpon>Electrical.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Electrical.aspx.designer.cs">
+      <DependentUpon>Electrical.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ElectricalReview.aspx.cs">
+      <DependentUpon>ElectricalReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ElectricalReview.aspx.designer.cs">
+      <DependentUpon>ElectricalReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Equipment.aspx.cs">
+      <DependentUpon>Equipment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Equipment.aspx.designer.cs">
+      <DependentUpon>Equipment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\DeclarationList.aspx.cs">
+      <DependentUpon>DeclarationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\DeclarationList.aspx.designer.cs">
+      <DependentUpon>DeclarationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Declare.aspx.cs">
+      <DependentUpon>Declare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Declare.aspx.designer.cs">
+      <DependentUpon>Declare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\EquipmentReview.aspx.cs">
+      <DependentUpon>EquipmentReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\EquipmentReview.aspx.designer.cs">
+      <DependentUpon>EquipmentReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuilding.aspx.cs">
+      <DependentUpon>GreenBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuilding.aspx.designer.cs">
+      <DependentUpon>GreenBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuildingReview.aspx.cs">
+      <DependentUpon>GreenBuildingReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\GreenBuildingReview.aspx.designer.cs">
+      <DependentUpon>GreenBuildingReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Industry.aspx.cs">
+      <DependentUpon>Industry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Industry.aspx.designer.cs">
+      <DependentUpon>Industry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\IndustryReview.aspx.cs">
+      <DependentUpon>IndustryReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\IndustryReview.aspx.designer.cs">
+      <DependentUpon>IndustryReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuilding.aspx.cs">
+      <DependentUpon>IntelligentBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuilding.aspx.designer.cs">
+      <DependentUpon>IntelligentBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuildingReview.aspx.cs">
+      <DependentUpon>IntelligentBuildingReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\IntelligentBuildingReview.aspx.designer.cs">
+      <DependentUpon>IntelligentBuildingReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Landscape.aspx.cs">
+      <DependentUpon>Landscape.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Landscape.aspx.designer.cs">
+      <DependentUpon>Landscape.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStates.ascx.cs">
+      <DependentUpon>LegalStates.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\LegalStates.ascx.designer.cs">
+      <DependentUpon>LegalStates.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Municipal.aspx.cs">
+      <DependentUpon>Municipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Municipal.aspx.designer.cs">
+      <DependentUpon>Municipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\MunicipalReview.aspx.cs">
+      <DependentUpon>MunicipalReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\MunicipalReview.aspx.designer.cs">
+      <DependentUpon>MunicipalReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\OrderSheet.ascx.cs">
+      <DependentUpon>OrderSheet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\OrderSheet.ascx.designer.cs">
+      <DependentUpon>OrderSheet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Participant.ascx.cs">
+      <DependentUpon>Participant.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Participant.ascx.designer.cs">
+      <DependentUpon>Participant.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuilding.aspx.cs">
+      <DependentUpon>PublicBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\PublicBuilding.aspx.designer.cs">
+      <DependentUpon>PublicBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\PublicConstruction.aspx.cs">
+      <DependentUpon>PublicConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\PublicConstruction.aspx.designer.cs">
+      <DependentUpon>PublicConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuilding.aspx.cs">
+      <DependentUpon>ResidentialBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuilding.aspx.designer.cs">
+      <DependentUpon>ResidentialBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuildingReview.aspx.cs">
+      <DependentUpon>ResidentialBuildingReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\ResidentialBuildingReview.aspx.designer.cs">
+      <DependentUpon>ResidentialBuildingReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Signarure.ascx.cs">
+      <DependentUpon>Signarure.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Signarure.ascx.designer.cs">
+      <DependentUpon>Signarure.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Software.aspx.cs">
+      <DependentUpon>Software.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Software.aspx.designer.cs">
+      <DependentUpon>Software.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\SoftwareReview.aspx.cs">
+      <DependentUpon>SoftwareReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\SoftwareReview.aspx.designer.cs">
+      <DependentUpon>SoftwareReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Standard.aspx.cs">
+      <DependentUpon>Standard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Standard.aspx.designer.cs">
+      <DependentUpon>Standard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\StandardReview.aspx.cs">
+      <DependentUpon>StandardReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\StandardReview.aspx.designer.cs">
+      <DependentUpon>StandardReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\Survey.aspx.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\Survey.aspx.designer.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\SurveyReview.aspx.cs">
+      <DependentUpon>SurveyReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\SurveyReview.aspx.designer.cs">
+      <DependentUpon>SurveyReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\TraditionalBuilding.aspx.cs">
+      <DependentUpon>TraditionalBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\TraditionalBuilding.aspx.designer.cs">
+      <DependentUpon>TraditionalBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Declaration\TraditionalBuildingReview.aspx.cs">
+      <DependentUpon>TraditionalBuildingReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Declaration\TraditionalBuildingReview.aspx.designer.cs">
+      <DependentUpon>TraditionalBuildingReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertReview.aspx.cs">
+      <DependentUpon>ExpertReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertReview.aspx.designer.cs">
+      <DependentUpon>ExpertReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertVote.aspx.cs">
+      <DependentUpon>ExpertVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ExpertVote.aspx.designer.cs">
+      <DependentUpon>ExpertVote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertElect\ReviewList.aspx.cs">
+      <DependentUpon>ReviewList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertElect\ReviewList.aspx.designer.cs">
+      <DependentUpon>ReviewList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\Allocation.aspx.cs">
+      <DependentUpon>Allocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\Allocation.aspx.designer.cs">
+      <DependentUpon>Allocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\AllocationList.aspx.cs">
+      <DependentUpon>AllocationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\AllocationList.aspx.designer.cs">
+      <DependentUpon>AllocationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\ExpertAdjust.aspx.cs">
+      <DependentUpon>ExpertAdjust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\ExpertAdjust.aspx.designer.cs">
+      <DependentUpon>ExpertAdjust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\ExpertImport.aspx.cs">
+      <DependentUpon>ExpertImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\ExpertImport.aspx.designer.cs">
+      <DependentUpon>ExpertImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\GroupList.aspx.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\GroupList.aspx.designer.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\GroupMember.aspx.cs">
+      <DependentUpon>GroupMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\GroupMember.aspx.designer.cs">
+      <DependentUpon>GroupMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\GroupSet.aspx.cs">
+      <DependentUpon>GroupSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\GroupSet.aspx.designer.cs">
+      <DependentUpon>GroupSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExpertManage\ExpertList.aspx.cs">
+      <DependentUpon>ExpertList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ExpertManage\ExpertList.aspx.designer.cs">
+      <DependentUpon>ExpertList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryData\HistoryActivity.aspx.cs">
+      <DependentUpon>HistoryActivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HistoryData\HistoryActivity.aspx.designer.cs">
+      <DependentUpon>HistoryActivity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryData\HistoryReview.aspx.cs">
+      <DependentUpon>HistoryReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HistoryData\HistoryReview.aspx.designer.cs">
+      <DependentUpon>HistoryReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LeaguerElect\LeaguerVote.aspx.cs">
+      <DependentUpon>LeaguerVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LeaguerElect\LeaguerVote.aspx.designer.cs">
+      <DependentUpon>LeaguerVote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Privilege\ControlList.aspx.cs">
+      <DependentUpon>ControlList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Privilege\ControlList.aspx.designer.cs">
+      <DependentUpon>ControlList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Privilege\CreatePrivilege.aspx.cs">
+      <DependentUpon>CreatePrivilege.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Privilege\CreatePrivilege.aspx.designer.cs">
+      <DependentUpon>CreatePrivilege.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Privilege\GroupUser.aspx.cs">
+      <DependentUpon>GroupUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Privilege\GroupUser.aspx.designer.cs">
+      <DependentUpon>GroupUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Privilege\PrivilegeList.aspx.cs">
+      <DependentUpon>PrivilegeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Privilege\PrivilegeList.aspx.designer.cs">
+      <DependentUpon>PrivilegeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Privilege\PrivilegeManage.ashx.cs">
+      <DependentUpon>PrivilegeManage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\CreateUserM.aspx.cs">
+      <DependentUpon>CreateUserM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\CreateUserM.aspx.designer.cs">
+      <DependentUpon>CreateUserM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\ExpertUser.aspx.cs">
+      <DependentUpon>ExpertUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\ExpertUser.aspx.designer.cs">
+      <DependentUpon>ExpertUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerChildUser.aspx.cs">
+      <DependentUpon>LeaguerChildUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerChildUser.aspx.designer.cs">
+      <DependentUpon>LeaguerChildUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerChildUserList.aspx.cs">
+      <DependentUpon>LeaguerChildUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerChildUserList.aspx.designer.cs">
+      <DependentUpon>LeaguerChildUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerUser.aspx.cs">
+      <DependentUpon>LeaguerUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerUser.aspx.designer.cs">
+      <DependentUpon>LeaguerUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerUserImport.aspx.cs">
+      <DependentUpon>LeaguerUserImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerUserImport.aspx.designer.cs">
+      <DependentUpon>LeaguerUserImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerUserList.aspx.cs">
+      <DependentUpon>LeaguerUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\LeaguerUserList.aspx.designer.cs">
+      <DependentUpon>LeaguerUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\LocalUser.aspx.cs">
+      <DependentUpon>LocalUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\LocalUser.aspx.designer.cs">
+      <DependentUpon>LocalUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\ManagerUser.aspx.cs">
+      <DependentUpon>ManagerUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\ManagerUser.aspx.designer.cs">
+      <DependentUpon>ManagerUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\RetrievePassword.aspx.cs">
+      <DependentUpon>RetrievePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\RetrievePassword.aspx.designer.cs">
+      <DependentUpon>RetrievePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\RetrievePasswordSuccess.aspx.cs">
+      <DependentUpon>RetrievePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\RetrievePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>RetrievePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\RetrievePassword_Return.aspx.cs">
+      <DependentUpon>RetrievePassword_Return.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\RetrievePassword_Return.aspx.designer.cs">
+      <DependentUpon>RetrievePassword_Return.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\UpdatePassword.aspx.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\UpdatePassword.aspx.designer.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManage\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserManage\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\plugins\ueditor\net\upload\image\" />
+    <Folder Include="Content\Temp\ExcelTemp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{412e70e4-c5ff-4423-bf9a-d95f3b87d598}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dal\Dal.csproj">
+      <Project>{2d1eb0f6-b05e-4e9a-a3c1-dec6f749a188}</Project>
+      <Name>Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BKXPYServiceReference\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2999</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2999/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

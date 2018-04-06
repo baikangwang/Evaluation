@@ -1,0 +1,509 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Evaluation.View.Mutual.Site" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>评优管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv = "X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <!--[if lte IE9]><script>window.location.href='../Mutual/upgrade-your-browser.aspx';</script>
+        <![endif]-->
+    <link rel="stylesheet" type="text/css" href="../../Content/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../../Content/Css/pages.css" />
+    <link rel="stylesheet" type="text/css" href="../../Content/bootstrap/css/bootstrap.min.css" />
+    <%-- 主页样式 --%>
+    <link rel="stylesheet" type="text/css" href="../../Content/assets/css/main.css" /> 
+    <link rel="stylesheet" type="text/css" href="../../Content/assets/css/buttons.css" />
+    <%-- 图标 --%>
+   
+    <script type="text/javascript" src="../../Content/assets/js/libs/jquery-1.10.2.min.js"></script>     
+    <script type="text/javascript" src="../../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Content/assets/js/app.js"></script>
+    <script type="text/javascript" src="../../Content/assets/js/libs/breakpoints.js"></script>
+    <script type="text/javascript" src="../../Content/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="../../Content/plugins/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+    <script type="text/javascript" src="../../Content/plugins/respond/respond.min.js"></script>
+    <script src="../../Content/Javascript/HomePage.js"></script> 
+    <%--bootstrap-table相关插件--%>
+    <link href="../../Content/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-table/bootstrap-editable.css" rel="stylesheet" />
+    <script src="../../Content/plugins/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../../Content/plugins/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-table/bootstrap-editable.js"></script>
+    <script src="../../Content/plugins/bootstrap-table/bootstrap-table-editable.js"></script>
+    <link href="../../Content/plugins/ui-choose/src/ui-choose.css" rel="stylesheet" />
+    <script src="../../Content/plugins/ui-choose/src/ui-choose.js"></script>
+     
+    <%--下拉框 --%>
+    <link href="../../Content/plugins/bootstrap-multiselect/multiple-select.css" rel="stylesheet" />
+    <script src="../../Content/plugins/bootstrap-multiselect/multiple-select.js"></script>
+  
+      <!--datepicker-->
+    <link rel="stylesheet" type="text/css" href="../../Content/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+    <script type="text/javascript" src="../../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="../../Content/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+
+    <script type="text/javascript" src="../../Content/plugins/cookie/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="../../Content/plugins/echarts-2.2.7/build/dist/echarts-all.js"></script>
+    <%-- 弹出框 --%>
+    <script type="text/javascript" src="../../Content/plugins/layer/layer.js"></script>    
+    <script src="../../Content/Javascript/FunctionJS.js"></script>  
+    <asp:ContentPlaceHolder ID="head" runat="server">    
+    </asp:ContentPlaceHolder>   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";        
+        }
+        #sidebar{
+           font-size:14px;
+        }
+        #test{
+            border:0;width:100%;
+        }
+        body {
+            background-color: #eeeeee;
+        }
+
+        form {
+            margin: 0;
+            padding-left: 0px;
+            margin-left: 0;
+        }
+
+        #nav>li span{
+            width:30px; font-size:14px;
+        }
+        #sidebar {
+            width: 200px;
+            background: #EEEEEE;
+        }
+
+        .sidebar-fixed {
+            position: fixed !important;
+            top: 60px;
+        }
+
+        #container {
+            overflow: hidden;
+            position: inherit;
+        }
+
+        #content {
+            margin-left: 203px;
+            overflow: hidden;
+            padding: 60px;
+            padding-right: 0;
+            padding-left: 30px;
+            background-color: #eeeeee;
+            padding-top:110px;
+            padding-right: 30px;
+         
+        }
+
+        #container .logo {
+          width: 200px;
+            background: url(../../Content/Images/banner1.png);
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-bottom: 5px solid #3cc0cc;
+        }
+
+            #container .logo .logoPic {
+                width: 30px;
+                height: 30px;                
+                position: absolute;
+                top: 13px;
+                left: 22px;
+            }
+            #container .logo .logoPic img{             
+                 width: 30px;
+                height: 30px;               
+            }
+            #container .logo span {
+                position: absolute;
+                top: 16px;
+                left: 65px;
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+        .pageHeader {
+            height: 60px;
+            width: 100%;
+            background:url(../../Content/Images/banner2.png);
+            position: fixed;
+            left: 0px;
+            z-index: 10;
+            top: 0;
+            border-bottom: 5px solid #3cc0cc;
+        }
+
+            .pageHeader span {
+              position:absolute;
+              top: 28px;
+              right: 24px;
+            }
+
+        .widget.box .widget-header .toolbar.no-padding .btn {
+            margin-top: 0;
+        }
+        #sidebar ul#nav > li.current, #sidebar ul#nav > .open {
+            font-size: 15px;
+            background: url(../../Content/Images/menu.png);
+            background-size: cover;
+        }
+        #sidebar ul#nav > li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: normal;
+            text-shadow: 0 0 0 #fff;
+            padding-left: 41px;
+            font-size: 16px;
+        }
+         #nav li > ul.sub-menu > li > a span {
+            float: left;
+            display: block;
+            width: 27px;
+        }  
+            #sidebar ul#nav > li a i {
+                color: #fff;
+                padding-right: 15px;
+                padding-top:2px;
+            }
+            #sidebar ul#nav > li.open ul a i:nth-child(1) {
+              padding-top:0;
+            }
+            #sidebar ul#nav > li a i:nth-child(2) {
+                color: #fff;
+                float: right;
+                margin-right: -1px;
+                 padding-top:2px;
+            }      
+        #sidebar ul#nav > li {
+            font-size: 15px;
+            background: url(../../Content/Images/menu.png);
+            background-size: cover;
+        }
+        #sidebar ul#nav li:last-child, #sidebar ul#nav li.open, #sidebar ul#nav li.open-default, #sidebar ul#nav li.open-fixed {
+            border-bottom: 1px solid #cccccc;
+        }
+        #sidebar ul#nav> li >a:hover {
+            background: #30b9cb;
+        }
+        #sidebar ul#nav .open ul li {
+            border-bottom: 1px solid #abaaaf;
+            border-top: 1px solid #fff;
+            color: #000000;
+        }
+        #sidebar ul#nav li .arrow {
+            line-height: 20px;  
+            color:#fff;
+        }
+        #sidebar ul#nav ul.sub-menu li a i {
+            color: #000000;
+            text-decoration: none;
+            font-weight: normal;
+            text-shadow: 0 0 0 #fff;
+        }
+
+        #sidebar ul#nav ul.sub-menu li a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: normal;
+            text-shadow: 0 0 0 #fff;
+            font-size: 15px;
+            padding: 9px 15px 9px 48px;
+        }
+
+        #sidebar ul#nav ul.sub-menu ul.sub-menu > li {
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #fff;
+            font-size: 13px;
+        }
+
+            #sidebar ul#nav ul.sub-menu ul.sub-menu > li a {
+                padding: 7px 48px;
+            }
+
+        #sidebar ul#nav ul.sub-menu ul.sub-menu {
+            margin: 0;
+        }
+
+        #sidebar ul#nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }   
+            #sidebar ul#nav > li.current > a {
+                border-right: 0;
+            }
+
+        #sidebar .fa-angle-left:before {
+            content: "";
+        }
+
+        .information {
+            color: #7c7b7b;
+            background-color: #fff;
+            font-weight: 500;
+        }
+
+            .information > span {
+                display: block;
+                padding-left: 20px;
+                padding-top: 3px;
+                background: #f5f5f5;
+            }
+
+                .information > span:nth-child(1) {
+                    padding-top:8px;
+                }
+
+            .information div {
+                overflow: hidden;
+                background: #f5f5f5;
+                padding-bottom: 11px;
+                padding-top: 9px;
+            }
+
+            .information a {
+                 text-align:center;
+                 line-height:26px;
+                color: #585858;
+                height:26px;
+                width:85px;
+                background-image:url(../../../Content/Images/btn.png);
+                background-repeat:no-repeat;
+                float: left;
+                margin-left: 10px;
+                font-size: 12px;     
+            }
+
+                .information a:hover {
+                    text-decoration: none;
+                }
+
+        .table-striped tbody > tr:nth-child(even) > td, .table-striped tbody > tr:nth-child(even) > th {
+            background-color: #cbcbcb;
+        }
+
+        .table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
+            background-color: #fff;
+        }
+      
+        .table-hover tbody tr:hover > td {
+            background-color: #DBF1EF;
+        }
+        #btnPassword{
+                 text-align:center;
+                 line-height:26px;
+                outline:none;
+                color: #585858;
+                height:26px;
+                width:85px;
+                background-image:url(../../../Content/Images/btn.png);
+                background-repeat:no-repeat;
+                float: left;
+                margin-left: 10px;
+                font-size: 12px!important;
+                border:none;
+        }
+        #btnLoginOut{
+                    float: left;
+                    color: #585858;
+                    outline:none;
+                    border-radius: 5px;
+                    margin-left: 5px;
+                    font-size: 12px!important;
+                    border:none;
+                    cursor: pointer;
+                     height:26px;
+                    width:85px;
+                    background-image:url(../../../Content/Images/btn.png) ;
+                    padding-bottom:2px;      
+        }
+       .fixed-table-toolbar .btn:hover,.btn:focus{
+            background-color:#FAFAFA;
+            color:#000;
+        }
+       .fixed-table-body .table td{
+           padding:4px 8px !important;
+       }
+        tbody .fa-trash:before {
+            content: "\f1f8";
+            font-size: 18px;
+        }     
+       .navs{
+           width:100%;height:27px;position:absolute;top:60px;right:0;background: url(../../Content/Images/bread.jpg);
+           background-size:contain;padding:4px 0 0 232px;color:#3cc0cc;
+           filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../Content/Images/bread.jpg');
+       }
+        .nav1 a:hover {
+            background: transparent;
+        }
+
+        .nav1 a {
+            font-size: 14px;
+            color: #3cc0cc;
+        }   
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:HiddenField runat="server" ID="hfLogoImage" ClientIDMode="Static" />
+        <div id="container">
+            <div id="sidebar" class="sidebar-fixed">
+                <div class="logo">
+                    <div class="logoPic">
+                        <img src="#" alt="" />
+                    </div>
+                    <span>评优管理系统</span>
+                </div>
+                <div id="sidebar-content">
+                    <div class="information">
+                        <span>欢迎回来 !</span>
+                        <span>用户名 :  <span style="color: #2fb9c6;display: block;float: right;width: 122px;" id="spUserName" runat="server"></span></span>
+                        <span>登录时间 : <span style="color: #2fb9c6;display: block; float: right;width: 106px;" id="spUserLoginTime" runat="server"></span></span>
+                        <div>
+                            <%--<a href="../UserManage/RetrievePassword.aspx">修改密码</a>--%>
+                            <asp:Button ID="btnPassword" runat="server"  Text="修改密码" OnClick="btnPassword_Click" UseSubmitBehavior="false"/>
+                            <asp:Button ID="btnLoginOut" runat="server" Text=" 退  &nbsp; 出&nbsp;" OnClick="btnLoginOut_Click"  UseSubmitBehavior="false"/>
+                            <asp:Button ID="forbiddenEnter" runat="server" OnClick="forbiddenEnter_Click" style="display:none;"/>
+                        </div>
+                    </div>
+                    <ul id="nav">           
+                    </ul>
+                </div>
+                <div id="divider" class="resizeable"></div>
+            </div>
+            <div id="content">           
+                <div class="pageHeader">              
+                    <span>
+                        <asp:Literal runat="server" ID="litTimeInfo"></asp:Literal> 
+                        <input id="tyUserType" runat="server" type="text" hidden="hidden" />                   	
+                    </span>
+                </div>
+                 <script>
+                     $(function () {
+                         $('.logoPic img').attr('src',$('#hfLogoImage').val())
+                         Site();
+                     })
+                </script>
+               <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    function ShowMessage(strHtml) {
+        swal({
+            html: strHtml,
+            showCloseButton: true,
+            showCancelButton: false,
+            confirmButtonText: '<i class="fa fa-check"></i> 确认'
+        });
+    }
+
+    function Site() {      
+        $.ajax({
+            url: "../Mutual/Common.ashx",
+            type: "post",
+            data: { "Action": "GetMenu" },
+            dataType:'json',
+            success: function (data) {              
+                menuitem(data);
+                Menu();
+                App.init();
+            }
+        });                       
+    }
+    function menuitem(data) {
+        var OneMenu = [];
+        var TwoMenu = [];
+        var ThreeMenu = [];
+        $.each(data, function (i, v) {
+            if (data[i].MenuLevel === 1) {
+                var html = '<li>';
+                html += '<a href="' + data[i].PageUrl + '" dataCode="' + data[i].MenuCode + '">';
+                html += '<span><i class="' + data[i].MenuIcon + '"aria-hidden="true"></i></span>';
+                html += data[i].MenuNameCn;
+                html += '</a>';
+                html += '<ul class="sub-menu"></ul>';
+                html += '</li>';
+                $('#nav').append(html);
+                OneMenu.push(data[i]);
+            } else if (data[i].MenuLevel === 2) {
+                TwoMenu.push(data[i]);
+            } else if (data[i].MenuLevel === 3) {
+                ThreeMenu.push(data[i]);
+            }
+        });
+        for (var i = 0; i < OneMenu.length; i++) {
+            for (var j = 0; j < TwoMenu.length; j++) {
+                if (OneMenu[i].MenuCode === TwoMenu[j].ParentMenuCode) {
+                    var html2 = '<li><a href="' + TwoMenu[j].PageUrl + '" dataCode="' + TwoMenu[j].MenuCode + '">';
+                    html2 += '<span><i class="' + TwoMenu[j].MenuIcon + '"aria-hidden="true"></i></span>';
+                    html2 += TwoMenu[j].MenuNameCn;
+                    html2 += '</a>';
+                    html2 += '</li>';
+                    $('#nav> li> ul').eq(i).append(html2);
+                }
+            }
+        }
+        if ($('#tyUserType').val() == '会员用户' || $('#tyUserType').val() == '会员子用户') {
+            $('#nav>li:nth-child(2)>ul>li:nth-child(1)>a>i').css('display', '');
+            $('#nav>li:nth-child(2)>ul>li:nth-child(1)').append("<ul class='sub-menu three'></ul>")
+            for (var i = 0; i < ThreeMenu.length; i++) {
+                var threeitem = '<li><a href="' + ThreeMenu[i].PageUrl + '" dataCode="' + ThreeMenu[i].MenuCode + '">';
+                threeitem += '<span><i class="' + ThreeMenu[i].MenuIcon + '"aria-hidden="true"></i></span>';
+                threeitem += '' + ThreeMenu[i].MenuNameCn + '</a>';
+                threeitem += '</li>';
+                $(".sub-menu.three").append(threeitem);
+            }
+        }
+    };
+
+    function Menu() {
+        if ($('#tyUserType').val() == '超级管理员') {
+            $('#nav>li:nth-child(2)').attr('class', 'current');
+        }
+        $('#nav>li:first-child').attr('class', 'current');     
+        var Code = $.cookie('Code');
+        $('#nav >li ul li a').mouseover(function () {
+            $(this).css('color', '#88dde7');
+            $(this).find('i:first-child').css('color', '#88dde7');
+        });
+
+        $('#nav >li ul li a').on('click', function () {
+            $.cookie('Code', null, { path: '/View/' });
+            $.cookie('Code', null, { path: '/' });
+            var code = $(this).attr('datacode');
+            $.cookie('Code', code, { path: '/' });
+        });
+        $('#nav >li ul li a').mouseout(function () {
+            $(this).css('color', '#000');
+            $(this).find('i:first-child').css('color', '#000');
+            $('a[datacode="' + Code + '"]').css('color', '#88dde7');
+            $('a[datacode="' + Code + '"]').find('span i').css('color', '#88dde7');
+        });       
+          
+        if ($.cookie('Code')) {
+            $('a[datacode="' + Code + '"]').css('color', '#88dde7')
+            $('a[datacode="' + Code + '"]').find('span i').css('color', '#88dde7');
+            $('a[datacode="' + Code + '"]').closest('ul').css('display', 'block');
+            $('a[datacode="' + Code + '"]').closest('ul').parent().addClass('open');
+            $('a[datacode="' + Code + '"]').closest('ul').parent().parent().css('display', 'block');
+            $('a[datacode="' + Code + '"]').closest('ul').parent().parent().parent().addClass('open');
+        };       
+        $('#nav>li>ul>li>a >i').css('display', 'none');
+        $('#nav>li.current >ul,#nav>li.current a > i').remove();
+    } 
+</script>
